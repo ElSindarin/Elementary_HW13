@@ -10,6 +10,7 @@ public class Main {
         buyItemAttempt(card, 10000.00);
         buyItemAttempt(card, 20000.00);
         buyItemAttempt(card, 50000.00);
+        buyItemAttempt(card, 150000.00);
         card.fillAccount(-50.00);
         card.fillAccount(31000.00);
         card.changeStatus();

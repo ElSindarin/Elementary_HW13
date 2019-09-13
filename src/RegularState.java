@@ -12,6 +12,14 @@ public class RegularState implements BalanceStatus {
     }
 
     @Override
+    public void buyItem(Card card, Double price) {
+        if (card.getBalance() - price <= -50000.00) {
+            System.out.println("Личных и кредитных средств не хватит на эту покупку. Операция будет проведена, но счёт будет заблокирован до погашения избытка использования кредитных средств");
+        }
+        card.setBalance(card.getBalance() - price);
+    }
+
+    @Override
     public void showBalanceStatus(Card card) {
         System.out.println("Банковская карта используется в обычном режиме. Кредитные средства не задействованы");
     }

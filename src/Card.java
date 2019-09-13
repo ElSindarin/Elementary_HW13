@@ -15,19 +15,12 @@ public class Card {
         balanceStatus.showBalanceStatus(this);
     }
 
-    public BalanceStatus getBalanceStatus() {
-        return balanceStatus;
-    }
-
     public Double getBalance() {
         return balance;
     }
 
     public void buyItem (Double price) {
-        if (balanceStatus instanceof BlockedState || (balance - price <= -50000.00)) {
-            System.out.println("Личных и кредитных средств не хватит на эту покупку. Операция будет проведена, но счёт будет заблокирован до погашения избытка использования кредитных средств");
-        }
-        balance -= price;
+        balanceStatus.buyItem(this,price);
     }
 
     public void fillAccount (Double amount) {
@@ -44,4 +37,7 @@ public class Card {
         this.balanceStatus = balanceStatus;
     }
 
+    public void setBalance(Double balance) {
+        this.balance = balance;
+    }
 }

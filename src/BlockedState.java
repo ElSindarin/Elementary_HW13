@@ -10,6 +10,11 @@ public class BlockedState implements BalanceStatus {
     }
 
     @Override
+    public void buyItem(Card card, Double price) {
+        System.out.println("Операция невозможна");
+    }
+
+    @Override
     public void showBalanceStatus(Card card) {
         System.out.println("Карта заблокирована");
     }
